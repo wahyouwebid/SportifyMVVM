@@ -249,6 +249,27 @@
                         android:layout_marginTop="@dimen/activity_vertical_margin"
                         android:text="@{prediction.matchWinner}"/>
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                        app:cardCornerRadius="10dp"
+                        android:layout_height="200dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/banner"/>
+
+<!--                        <com.anychart.AnyChartView-->
+<!--                            android:id="@+id/any_chart_view"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent" />-->
+
+                    </androidx.cardview.widget.CardView>
+
                 </RelativeLayout>
 
             </LinearLayout>
