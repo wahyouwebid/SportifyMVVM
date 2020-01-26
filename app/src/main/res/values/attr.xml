@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EmptyRecyclerView">
+        <attr name="emptyView" format="reference" />
+        <attr name="emptyString" format="reference" />
+    </declare-styleable>
+</resources>

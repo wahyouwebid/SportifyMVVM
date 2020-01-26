@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="fixture"
+            type="com.wahyu.sportify.model.lastmatch.Fixture" />
+        <variable
+            name="vmLastMatch"
+            type="com.wahyu.sportify.viewmodel.lastmatch.LastMatchViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="42dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentStart="@dimen/appbar_padding_top"
+            card_view:cardCornerRadius="10dp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_toStartOf="@+id/liear_date"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_team_home"
+                        android:layout_width="@dimen/width_image_larges"
+                        android:layout_height="@dimen/width_image_larges"
+                        tools:imageUrl="@{vmLastMatch.getThumbnail(fixture.homeTeam.logo)}"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:id="@+id/tv_team_home"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@{fixture.homeTeam.teamName}"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/appbar_padding_top"
+                        android:fontFamily="@font/neosan_regular"
+                        android:textColor="@color/colorText"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/liear_date"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="10sp"
+                        android:fontFamily="@font/neosan_regular"
+                        android:layout_gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_score_team_home"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(fixture.goalsHomeTeam)}"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/neosan_regular"
+                            android:textColor="@color/colorText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" - "
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_horizontal"
+                            android:fontFamily="@font/neosan_regular"
+                            android:textColor="@color/colorText" />
+
+                        <TextView
+                            android:id="@+id/tv_score_team_away"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(fixture.goalsAwayTeam)}"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/neosan_regular"
+                            android:layout_gravity="center_horizontal"
+                            android:textColor="@color/colorText" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_win"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Home win"
+                        android:background="@drawable/bg_home_win"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingBottom="3dp"
+                        android:paddingTop="2dp"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:layout_marginTop="6dp"
+                        android:fontFamily="@font/neosan_regular"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/liear_date"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_team_away"
+                        android:layout_width="@dimen/width_image_larges"
+                        android:layout_height="@dimen/width_image_larges"
+                        android:layout_gravity="center_horizontal"
+                        tools:imageUrl="@{vmLastMatch.getThumbnail(fixture.awayTeam.logo)}"/>
+
+                    <TextView
+                        android:id="@+id/tv_team_away"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@{fixture.awayTeam.teamName}"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/neosan_regular"
+                        android:layout_marginTop="@dimen/appbar_padding_top"
+                        android:textColor="@color/colorText"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>
