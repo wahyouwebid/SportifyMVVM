@@ -30,7 +30,7 @@ public class StandingViewModel extends BaseObservableViewModel<StandingView> imp
 
     private StandingRepository repository;
     private final MutableLiveData<ResponseStanding> responseStanding = new MutableLiveData<>();
-    private MutableLiveData<List<List<Standing>>> userList = new MutableLiveData<List<List<Standing>>>();
+    private MutableLiveData<List<List<Standing>>> standingList = new MutableLiveData<List<List<Standing>>>();
     public ObservableBoolean isRefresh = new ObservableBoolean();
     private StandingAdapter adapter;
 
@@ -60,11 +60,11 @@ public class StandingViewModel extends BaseObservableViewModel<StandingView> imp
                 .subscribeWith(new DisposableSingleObserver<ResponseStanding>(){
 
                     @Override
-                    public void onSuccess(ResponseStanding userResponse) {
+                    public void onSuccess(ResponseStanding standing) {
                         getNavigator().hideLoading();
                         isRefresh.set(false);
-                        responseStanding.setValue(userResponse);
-                        userList.setValue(responseStanding.getValue().getApi().getStandings());
+                        responseStanding.setValue(standing);
+                        standingList.setValue(responseStanding.getValue().getApi().getStandings());
                         setAdapter(getStandingList().getValue().get(0));
                     }
 
@@ -81,7 +81,7 @@ public class StandingViewModel extends BaseObservableViewModel<StandingView> imp
     }
 
     public MutableLiveData<List<List<Standing>>> getStandingList() {
-        return userList;
+        return standingList;
     }
 
     public void onRefresh() {

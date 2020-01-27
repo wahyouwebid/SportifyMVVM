@@ -10,6 +10,7 @@ import com.wahyu.sportify.databinding.ActivityMainBinding;
 import com.wahyu.sportify.view.fragment.home.HomeFragment;
 import com.wahyu.sportify.view.fragment.lastmatch.LastMatchFragment;
 import com.wahyu.sportify.view.fragment.standing.StandingFragment;
+import com.wahyu.sportify.view.fragment.topscorers.TopScorersFragment;
 import com.wahyu.sportify.view.fragment.upcoming.UpcomingFragment;
 import com.wahyu.sportify.viewmodel.home.HomeView;
 import com.wahyu.sportify.viewmodel.home.HomeViewModel;
@@ -45,8 +46,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, HomeViewMode
 
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home_black_24dp));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_assignment_black_24dp));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_group_black_24dp));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.field));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_date_range_black_24dp));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_group_black_24dp));
         meowBottomNavigation.show(1, true);
 
         meowBottomNavigation.setOnShowListener(new Function1<MeowBottomNavigation.Model, Unit>() {
@@ -75,6 +77,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, HomeViewMode
 
                     case 4:
                         fragment = new UpcomingFragment();
+                        break;
+
+                    case 5:
+                        fragment = new TopScorersFragment();
                         break;
 
                     default:

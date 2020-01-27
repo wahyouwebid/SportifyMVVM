@@ -2,6 +2,7 @@ package com.wahyu.sportify.di.modules;
 import com.wahyu.sportify.view.fragment.home.HomeFragment;
 import com.wahyu.sportify.view.fragment.lastmatch.LastMatchFragment;
 import com.wahyu.sportify.view.fragment.standing.StandingFragment;
+import com.wahyu.sportify.view.fragment.topscorers.TopScorersFragment;
 import com.wahyu.sportify.view.fragment.upcoming.UpcomingFragment;
 
 import dagger.Module;
@@ -27,5 +28,8 @@ public abstract class FragmentBindingModule {
 
     @ContributesAndroidInjector
     abstract HomeFragment provideHomeFragment();
+
+    @ContributesAndroidInjector
+    abstract TopScorersFragment provideTopScorersFragment();
 
 }

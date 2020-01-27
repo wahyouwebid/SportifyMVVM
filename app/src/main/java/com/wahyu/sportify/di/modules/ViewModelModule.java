@@ -8,6 +8,7 @@ import com.wahyu.sportify.di.ViewModelKey;
 import com.wahyu.sportify.viewmodel.home.HomeViewModel;
 import com.wahyu.sportify.viewmodel.lastmatch.LastMatchViewModel;
 import com.wahyu.sportify.viewmodel.standing.StandingViewModel;
+import com.wahyu.sportify.viewmodel.topscorers.TopScorersViewModel;
 import com.wahyu.sportify.viewmodel.upcoming.UpcomingViewModel;
 
 import dagger.Binds;
@@ -42,6 +43,11 @@ public abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel.class)
     abstract ViewModel bindHomeViewModel(HomeViewModel homeViewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TopScorersViewModel.class)
+    abstract ViewModel bindTopScorersViewModel(TopScorersViewModel topScorersViewModel);
 
     @Binds
     abstract ViewModelProvider.Factory bindFactory(ViewModelFactory factory);
