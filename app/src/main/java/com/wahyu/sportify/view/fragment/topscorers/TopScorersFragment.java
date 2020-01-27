@@ -2,6 +2,8 @@ package com.wahyu.sportify.view.fragment.topscorers;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.wahyu.sportify.R;
 import com.wahyu.sportify.base.BaseFragment;
 import com.wahyu.sportify.databinding.FragmentTopscorersBinding;
@@ -18,7 +20,6 @@ public class TopScorersFragment extends BaseFragment<FragmentTopscorersBinding, 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle("TopScorers");
         vm.setNavigator(this);
         vm.loadData();
     }
@@ -30,7 +31,13 @@ public class TopScorersFragment extends BaseFragment<FragmentTopscorersBinding, 
 
     @Override
     public int getBindingVariable() {
+        initView();
         return com.wahyu.sportify.BR.vmTopScorer;
+    }
+
+    private void initView(){
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.setTitle("Top Scorers");
     }
 
     @Override

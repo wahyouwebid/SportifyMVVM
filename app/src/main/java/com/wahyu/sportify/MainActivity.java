@@ -23,8 +23,6 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, HomeViewMode
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Sportify");
         initView();
         loadFragment(new HomeFragment());
     }
@@ -45,8 +43,8 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, HomeViewMode
         MeowBottomNavigation meowBottomNavigation = findViewById(R.id.bottomNavigation);
 
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home_black_24dp));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_assignment_black_24dp));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.field));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_assessment_black_24dp));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_view_week_black_24dp));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_date_range_black_24dp));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_group_black_24dp));
         meowBottomNavigation.show(1, true);

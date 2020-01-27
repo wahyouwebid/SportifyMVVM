@@ -28,7 +28,8 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:text="@{String.valueOf(standing.rank)}"
-            android:textColor="@color/black"
+            android:textColor="@color/colorText"
+            android:layout_gravity="center_vertical"
             android:textSize="@dimen/text_content"
             android:fontFamily="@font/neosan_regular"/>
 

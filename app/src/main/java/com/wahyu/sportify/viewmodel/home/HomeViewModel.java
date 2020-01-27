@@ -65,7 +65,6 @@ public class HomeViewModel extends BaseObservableViewModel<HomeView> implements 
 
     public void setData(MutableLiveData<Prediction> prediction){
         this.prediction = prediction;
-        notifyPropertyChanged(com.wahyu.sportify.BR.prediction);
     }
 
     public TeamAdapter getTeamAdapter(){
@@ -111,7 +110,8 @@ public class HomeViewModel extends BaseObservableViewModel<HomeView> implements 
                         isRefresh.set(false);
                         responsePredictions.setValue(predictions);
                         prediction.setValue(responsePredictions.getValue().getApi().getPredictions().get(0));
-
+                        notifyPropertyChanged(BR.prediction);
+                        setData(getPrediction());
                     }
 
                     @Override

@@ -39,7 +39,7 @@ public class UpcomingViewModel extends BaseObservableViewModel<UpcomingView> imp
     public UpcomingViewModel(@NonNull Application application, UpcomingRepository repository) {
         super(application);
         this.repository = repository;
-        this.adapter = new UpcomingAdapter(R.layout.item_upcoming, this);
+        this.adapter = new UpcomingAdapter(R.layout.item_upcoming_row, this);
         this.adapter.setOnItemClickCallback(this);
     }
 

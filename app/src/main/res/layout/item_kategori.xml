@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,19 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/activity_vertical_margin"
-        android:paddingRight="@dimen/activity_vertical_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_prediction"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="100dp"
             android:orientation="vertical"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
             app:cardCornerRadius="10dp"
             android:elevation="5dp"
-            app:cardBackgroundColor="@color/md_cyan_500">
+            android:layout_marginRight="4dp"
+            app:cardBackgroundColor="@color/md_cyan_400">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -50,14 +51,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_event"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
             android:layout_height="100dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             app:cardCornerRadius="10dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
             android:elevation="5dp"
-            app:cardBackgroundColor="@color/green_500">
+            app:cardBackgroundColor="@color/purple_300">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -83,15 +86,25 @@
 
         </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_lineup"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="100dp"
             android:orientation="vertical"
             app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
             android:layout_marginBottom="4dp"
             android:layout_marginLeft="@dimen/activity_vertical_margin"
             android:elevation="5dp"
+            android:layout_marginRight="8dp"
             app:cardBackgroundColor="@color/red_400">
 
             <LinearLayout
@@ -120,14 +133,16 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_statistics"
-            android:layout_width="100dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="100dp"
             android:orientation="vertical"
             app:cardCornerRadius="10dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            app:cardElevation="10dp"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:elevation="5dp"
-            app:cardBackgroundColor="@color/purple_400">
+            app:cardBackgroundColor="@color/blue_400">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -155,4 +170,4 @@
 
     </LinearLayout>
 
-</HorizontalScrollView>
+</LinearLayout>

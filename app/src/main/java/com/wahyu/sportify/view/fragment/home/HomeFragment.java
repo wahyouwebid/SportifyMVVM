@@ -3,6 +3,7 @@ package com.wahyu.sportify.view.fragment.home;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.View;
@@ -37,10 +38,14 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding, HomeViewMode
 
     @Override
     public int getBindingVariable() {
+        initView();
         return com.wahyu.sportify.BR.vmHome;
     }
 
-
+    private void initView(){
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.setTitle("Sportify");
+    }
     @Override
     public void onSuccess() {
 

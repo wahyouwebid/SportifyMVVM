@@ -38,7 +38,7 @@ public class LastMatchViewModel extends BaseObservableViewModel<LastMatchView> i
     public LastMatchViewModel(@NonNull Application application, LastMatchRepository repository) {
         super(application);
         this.repository = repository;
-        this.adapter = new LastMatchAdapter(R.layout.item_lastmatch, this);
+        this.adapter = new LastMatchAdapter(R.layout.item_lastmatch_row, this);
         this.adapter.setOnItemClickCallback(this);
     }
 

@@ -2,6 +2,8 @@ package com.wahyu.sportify.view.fragment.upcoming;
 
 import android.os.Bundle;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.wahyu.sportify.R;
 import com.wahyu.sportify.base.BaseFragment;
 import com.wahyu.sportify.databinding.FragmentUpcomingBinding;
@@ -18,7 +20,6 @@ public class UpcomingFragment extends BaseFragment<FragmentUpcomingBinding, Upco
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getActivity().setTitle("Standing");
         vm.setNavigator(this);
         vm.loadData();
     }
@@ -30,7 +31,13 @@ public class UpcomingFragment extends BaseFragment<FragmentUpcomingBinding, Upco
 
     @Override
     public int getBindingVariable() {
+        initView();
         return com.wahyu.sportify.BR.vmUpcoming;
+    }
+
+    private void initView(){
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.setTitle("Upcoming Match");
     }
 
     @Override
