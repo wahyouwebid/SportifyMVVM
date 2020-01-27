@@ -102,7 +102,7 @@
             app:onRefreshListener="@{() -> vmStanding.onRefresh()}"
             app:refreshing="@{vmStanding.isRefresh}">
 
-            <com.wahyu.sportify.utilities.EmptyRecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

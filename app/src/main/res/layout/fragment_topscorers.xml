@@ -23,7 +23,7 @@
             app:onRefreshListener="@{() -> vmTopScorer.onRefresh()}"
             app:refreshing="@{vmTopScorer.isRefresh}">
 
-            <com.wahyu.sportify.utilities.EmptyRecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_item"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

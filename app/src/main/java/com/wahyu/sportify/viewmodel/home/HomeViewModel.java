@@ -111,7 +111,7 @@ public class HomeViewModel extends BaseObservableViewModel<HomeView> implements 
                         isRefresh.set(false);
                         responsePredictions.setValue(predictions);
                         prediction.setValue(responsePredictions.getValue().getApi().getPredictions().get(0));
-                        setData(prediction);
+
                     }
 
                     @Override
